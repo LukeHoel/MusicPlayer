@@ -1,4 +1,4 @@
-//-Beginning-riff
+//Beginning-riff
 G5
 D5
 D6 
@@ -31,3 +31,4 @@ A5
 D5
 G5 
 D5
+//Main-Song
