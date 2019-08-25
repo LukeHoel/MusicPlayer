@@ -16,6 +16,16 @@ int main(int argc, char **argv) {
   }
 
   MusicPlayer player = MusicPlayer(ifstream(argv[1]));
+  // MusicPlayer player;
+  // player.testOctave('0');
+  // player.testOctave('1');
+  // player.testOctave('2');
+  // player.testOctave('3');
+  // player.testOctave('4');
+  // player.testOctave('5');
+  // player.testOctave('6');
+  // player.testOctave('7');
+  // player.testOctave('8');
 
   // Utility variables
   bool switcher = false;
@@ -23,7 +33,6 @@ int main(int argc, char **argv) {
   int noteTimer = 0;
   int currentNote = 0;
 
-  short time = 0;
   while (true) {
     if (noteTimer++ >= MusicPlayer::noteLength) {
       currentNote++;
@@ -33,11 +42,11 @@ int main(int argc, char **argv) {
       noteTimer = 0;
     }
     // Switch between high and low
-    if (switcherTimer++ >= 66) {
+    if (switcherTimer++ >= player.notes[currentNote].frequency) {
       switcher = !switcher;
       switcherTimer = 0;
     }
-    cout << (switcher ? MusicPlayer::amplitude : -MusicPlayer::amplitude);
+    cout << (switcher ? 1 : -0);
   }
   return 0;
 }

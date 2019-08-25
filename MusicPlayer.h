@@ -12,7 +12,6 @@ struct MusicPlayer {
   MusicPlayer(ifstream);
   vector<Note> notes;
   static int noteLength;
-  static int amplitude;
   void testOctave(char, int = 0);
 };
 } // namespace hoel

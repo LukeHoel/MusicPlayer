@@ -1,7 +1,6 @@
 #include "MusicPlayer.h"
 namespace hoel {
-int MusicPlayer::noteLength = Note::sampleRate / 8;
-int MusicPlayer::amplitude = 500;
+int MusicPlayer::noteLength = Note::sampleRate / 2;
 
 MusicPlayer::MusicPlayer(ifstream file) {
   string noteName;
