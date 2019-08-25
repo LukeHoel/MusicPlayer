@@ -1,5 +1,8 @@
 #include "MusicPlayer.h"
 namespace hoel {
+int MusicPlayer::noteLength = Note::sampleRate / 8;
+int MusicPlayer::amplitude = 500;
+
 MusicPlayer::MusicPlayer(ifstream file) {
   string noteName;
   while (file >> noteName) {
@@ -9,13 +12,11 @@ MusicPlayer::MusicPlayer(ifstream file) {
     }
   }
 }
-int MusicPlayer::noteLength = Note::sampleRate / 8;
-int MusicPlayer::amplitude = 500;
-void MusicPlayer::testOctave(char octave) {
+void MusicPlayer::testOctave(char octave, int startAt) {
   string noteNames[12] = {"C",  "C#", "D",  "Eb", "E",  "F",
                           "F#", "G",  "G#", "A",  "Bb", "B"};
-  for (int i = 0; i < 12; i++) {
-    notes.push_back(Note(noteNames[i] + octave));
+  for (; startAt < 12; startAt++) {
+    notes.push_back(Note(noteNames[startAt] + octave));
   }
 }
 } // namespace hoel

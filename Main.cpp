@@ -23,18 +23,17 @@ int main(int argc, char **argv) {
   int noteTimer = 0;
   int currentNote = 0;
 
+  short time = 0;
   while (true) {
     if (noteTimer++ >= MusicPlayer::noteLength) {
       currentNote++;
       if (currentNote > player.notes.size() - 1) {
         currentNote = 0;
-        // return 0;
       }
       noteTimer = 0;
-      // cout << notes[currentNote].frequency << endl;
     }
     // Switch between high and low
-    if (switcherTimer++ >= player.notes[currentNote].frequency) {
+    if (switcherTimer++ >= 66) {
       switcher = !switcher;
       switcherTimer = 0;
     }

@@ -31,10 +31,3 @@ A4
 D4
 G4 
 D4
-//-Main-song-starts-here
-//C4
-//F4
-//D4
-//D4
-//D4
-//D4
